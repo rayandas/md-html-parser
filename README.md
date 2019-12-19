@@ -19,8 +19,8 @@ Let's assume your server runs on port 5000.
 The index page of your server needs to be accessible in your web browser as mentioned below -  
 
 http://localhost:5000/
-* [sntroduction/chapter-One]()
-* [sntroduction/chapter-Two]()
+* [introduction/chapter-One]()
+* [introduction/chapter-Two]()
 * [setup/installation/chapter-One]()
 * [setup/configuration/chapter-One]()  
 
