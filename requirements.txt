@@ -1,0 +1,4 @@
+GitPython
+Python 3.7.5
+Flask 1.1.1
+
