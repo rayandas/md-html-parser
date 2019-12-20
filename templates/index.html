@@ -1,14 +1,22 @@
 {% extends 'base.html' %}
 
-{% block title %}Raw Form Example{% endblock %}
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <title>{% block title %}Enter the Github repository{% endblock %}</title>
+ </head>
+ <body>
+ <ul>
+ {% for name in files %}
+ <li>{{ name }}</li>
+ {% endfor %}
+ </ul>
 
-{% block content %}
-    <form method = "POST">
-        <p>
-            <label for="gh-label">GitHub URL</label>
-            <input id="gh-url" name="gh_url" type="text">
-        </p>
-
-        <input type="submit" value="Show">
-    </form>
-{% endblock %}
+ <ol>
+ {% for name in files %}
+ <li>{{ name }}</li>
+ {% endfor %}
+ </ol>
+</body>
+</html>
