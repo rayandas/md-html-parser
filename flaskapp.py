@@ -21,8 +21,8 @@ def parser(full_path):
                     root = r.replace(path,"")
                     url_path = root + "/" + file.replace('.md', '')
                     path = str(url_path)
-                    print(path)
-
+                    files.append(path)
+    return files
 
 def create_dir(gh_url):
  #    from ipdb import set_trace;set_trace()
@@ -47,20 +47,20 @@ def create_dir(gh_url):
 
     Repo.clone_from(git_url, full_path)
     
-    parser(full_path)
+    return parser(full_path)
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    message = ""
+    files = []
     if request.method == 'POST':
         gh_url  = request.form['gh_url']
         
         if len(gh_url) == 0:
             message = "Please enter the github repo"
         else:
-            create_dir(gh_url)
+            files = create_dir(gh_url)
 #            message = message
-    return render_template('index.html', title='Index Page')                
+    return render_template('index.html', files=files)                
 
 app.run(debug=True)
 
