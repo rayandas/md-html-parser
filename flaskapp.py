@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 
 def parser(full_path):
-# this path should be same as home/user/new_dir/assignment   
+
     path = full_path
 
     files = []
@@ -16,11 +16,14 @@ def parser(full_path):
     for r, d, f in os.walk(path):
         for file in f:
             if '.md' in file:
-                files.append(os.path.join(r, file))
-
-    for f in files:
-        print(f)
-
+                if 'README.md' not in file:
+#                    files.append(os.path.join(r, file))
+                    root = r.replace(path,"")
+                    url_path = root + "/" + file.replace('.md', '')
+                    file_name = root + "/" + file.replace('.md', '')
+                    str1 = str(url_path)
+                    print(str1)
+                    print("\n")
 
 def create_dir(gh_url):
  #    from ipdb import set_trace;set_trace()
@@ -57,8 +60,8 @@ def index():
             message = "Please enter the github repo"
         else:
             create_dir(gh_url)
-#            message = gh_url
-    return render_template('index.html', message=message)                
+#            message = message
+    return render_template('index.html', title='Index Page')                
 
 app.run(debug=True)
 
