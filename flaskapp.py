@@ -21,8 +21,8 @@ def parser(full_path):
                     root = r.replace(path,"")
                     url_path = root + "/" + file.replace('.md', '')
                     file_name = root + "/" + file.replace('.md', '')
-                    str1 = str(url_path)
-                    print(str1)
+                    path = str(url_path)
+                    print(path)
                     print("\n")
 
 def create_dir(gh_url):
