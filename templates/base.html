@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}Title{% endblock %}</title>
-</head>
-<body>
-    {% if message %}
-        <p>Note: {{ message }}</p>
-    {% endif %}
-    {% block content %}
-    {% endblock %}
-</body>
-</html>
+
+{% block title %}Raw Form Example{% endblock %}
+
+{% block content %}
+    <form method = "POST">
+        <p>
+            <label for="gh-label">GitHub URL</label>
+            <input id="gh-url" name="gh_url" type="text">
+        </p>
+
+        <input type="submit" value="Show">
+    </form>
+{% endblock %}
