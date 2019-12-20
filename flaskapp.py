@@ -20,10 +20,9 @@ def parser(full_path):
 #                    files.append(os.path.join(r, file))
                     root = r.replace(path,"")
                     url_path = root + "/" + file.replace('.md', '')
-                    file_name = root + "/" + file.replace('.md', '')
                     path = str(url_path)
                     print(path)
-                    print("\n")
+
 
 def create_dir(gh_url):
  #    from ipdb import set_trace;set_trace()
