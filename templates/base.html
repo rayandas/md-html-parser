@@ -1,21 +1,18 @@
 
 <!DOCTYPE html>
- <html lang="en">
- <head>
-     <meta charset="UTF-8">
-     <title>{% block title %}Enter the Github repository{% endblock %}</title>
- </head>
- <body>
-   <ul>
-     {% for name in files %}
-     <li>{{ name }}</li>
-     {% endfor %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Title{% endblock %}</title>
+</head>
+<body>
+    <ul>
+      {% for name in files %}
+        <li>{{ name }}</li>
+      {% endfor %}
    </ul>
-
-   <ol>
-     {% for name in files %}
-     <li>{{ name }}</li>
-     {% endfor %}
-   </ol>
+    {% block content %}
+    {% endblock %}
 </body>
 </html>
+
